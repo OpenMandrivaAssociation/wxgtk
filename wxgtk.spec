@@ -36,7 +36,7 @@ Patch2:         wxWidgets-3.0.4-collision.patch
 # From Fedora
 Patch3:		wxGTK3-3.0.3-abicheck.patch
 
-BuildRequires:  bakefile
+#BuildRequires:  bakefile
 BuildRequires:  pkgconfig(libjpeg)
 BuildRequires:  pkgconfig(libtiff-4)
 BuildRequires:  pkgconfig(expat)
