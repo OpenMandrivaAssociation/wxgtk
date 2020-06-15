@@ -24,7 +24,7 @@
 Summary:        GTK+ port of the wxWidgets library
 Name:           wxgtk
 Version:        3.1.3
-Release:        %mkrel 3
+Release:        1
 License:        wxWidgets Library Licence
 Group:          System/Libraries
 URL:            http://www.wxwidgets.org/
@@ -35,6 +35,7 @@ Patch1:         wxWidgets-2.9.5-multiarch-includes.patch
 Patch2:         wxWidgets-3.0.4-collision.patch
 # From Fedora
 Patch3:		wxGTK3-3.0.3-abicheck.patch
+
 BuildRequires:  bakefile
 BuildRequires:  pkgconfig(libjpeg)
 BuildRequires:  pkgconfig(libtiff-4)
