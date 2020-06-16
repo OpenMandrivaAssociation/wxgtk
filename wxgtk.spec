@@ -9,7 +9,7 @@
 %bcond_without gtk3
 
 # build with/without 2.8 compatibility
-%bcond_without compat28
+%bcond_with compat28
 
 %define gtkver %{?with_gtk3:3}%{!?with_gtk3:2}
 
