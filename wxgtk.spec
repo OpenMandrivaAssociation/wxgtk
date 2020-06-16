@@ -8,8 +8,6 @@
 # bcond_without gtk3 = gtk3
 %bcond_without gtk3
 
-# build with/without 2.8 compatibility
-%bcond_without compat28
 
 %define gtkver %{?with_gtk3:3}%{!?with_gtk3:2}
 
@@ -163,34 +161,10 @@ libtoolize --copy --force
 CFLAGS="%{optflags} -fno-strict-aliasing"
 CXXFLAGS="%{optflags} -fno-strict-aliasing"
 
-%configure \
-        --enable-intl \
-        --with-gtk=%{gtkver} \
-        --with-sdl \
-        --with-libmspack \
-        --with-libpng=sys \
-        --with-libjpeg=sys \
-        --with-libtiff=sys \
-        --with-zlib=sys \
-        --with-expat=sys \
-        --with-regex=builtin \
-        --disable-optimise \
-        --enable-calendar \
-        %{?with_compat28:--enable-compat28} \
-        --enable-controls \
-        --enable-msgdlg \
-        --enable-dirdlg \
-        --enable-numberdlg \
-        --enable-splash \
-        --enable-textdlg \
-        --enable-graphics_ctx \
-        --enable-grid \
-        --enable-catch_segvs \
-        --enable-mediactrl \
-        --enable-dataviewctrl \
-        --enable-permissive \
-        --enable-ipv6 \
-        --disable-rpath
+# In OMV #configure passes disable-static options by default to ensure, we have shared libraries. 
+# This broke build for this package, because it see it as: unrecognized options: --disable-static, --disable-silent-rules
+# Solution is below:
+CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" ./configure --prefix=%{_prefix} --libdir=%{_libdir} --enable-intl --with-gtk=%{gtkver} --with-sdl --with-libmspack --with-libpng=sys --with-libjpeg=sys --with-libtiff=sys --with-zlib=sys --with-expat=sys --with-regex=builtin --disable-optimise --enable-calendar --enable-compat28 --enable-controls --enable-msgdlg --enable-dirdlg --enable-numberdlg --enable-splash --enable-textdlg --enable-graphics_ctx --enable-grid --enable-catch_segvs --enable-mediactrl --enable-dataviewctrl --enable-permissive --enable-ipv6 --disable-rpath
 
 %make_build
 # Why isn't this this part of the main build? Need to investigate.
