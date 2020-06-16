@@ -163,7 +163,7 @@ libtoolize --copy --force
 CFLAGS="%{optflags} -fno-strict-aliasing"
 CXXFLAGS="%{optflags} -fno-strict-aliasing"
 
-%configure \
+CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" ./configure --prefix=%{_prefix} --libdir=%{_libdir}
         --enable-intl \
         --with-gtk=%{gtkver} \
         --with-sdl \
