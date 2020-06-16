@@ -163,19 +163,7 @@ libtoolize --copy --force
 CFLAGS="%{optflags} -fno-strict-aliasing"
 CXXFLAGS="%{optflags} -fno-strict-aliasing"
 
-CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" ./configure --prefix=%{_prefix} --libdir=%{_libdir}
-        --enable-intl \
-        --with-gtk=%{gtkver} \
-        --with-sdl \
-        --with-libmspack \
-        --with-libpng=sys \
-        --with-libjpeg=sys \
-        --with-libtiff=sys \
-        --with-zlib=sys \
-        --with-expat=sys \
-        --with-regex=builtin \
-        --disable-optimise \
-        --enable-calendar \
+CC="%{__cc}" CXX="%{__cxx}" CFLAGS="%{optflags}" CXXFLAGS="%{optflags}" ./configure --prefix=%{_prefix} --libdir=%{_libdir}--enable-intl --with-gtk=%{gtkver} --with-sdl --with-libmspack --with-libpng=sys --with-libjpeg=sys --with-libtiff=sys --with-zlib=sys --with-expat=sys --with-regex=builtin --disable-optimise --enable-calendar
         %{?with_compat28:--enable-compat28} \
         --enable-controls \
         --enable-msgdlg \
