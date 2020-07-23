@@ -30,7 +30,7 @@ Source0:        https://github.com/wxWidgets/wxWidgets/releases/download/v%{vers
 #Patch0:         wxWidgets-2.9.5-fix-linking.patch
 Patch1:         wxWidgets-2.9.5-multiarch-includes.patch
 # Originally from Gentoo
-Patch2:         wxWidgets-3.0.4-collision.patch
+#Patch2:         wxWidgets-3.0.4-collision.patch
 # From Fedora
 Patch3:		wxGTK3-3.0.3-abicheck.patch
 
