@@ -27,7 +27,7 @@ License:        wxWidgets Library Licence
 Group:          System/Libraries
 URL:            http://www.wxwidgets.org/
 Source0:        https://github.com/wxWidgets/wxWidgets/releases/download/v%{version}/%{oname}-%{version}.tar.bz2
-Patch0:         wxWidgets-2.9.5-fix-linking.patch
+#Patch0:         wxWidgets-2.9.5-fix-linking.patch
 Patch1:         wxWidgets-2.9.5-multiarch-includes.patch
 # Originally from Gentoo
 Patch2:         wxWidgets-3.0.4-collision.patch
