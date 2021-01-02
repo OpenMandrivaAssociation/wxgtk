@@ -13,8 +13,8 @@
 
 %define oname           wxWidgets
 
-%define major           %(echo %{version} | cut -d. -f3)
-%define api             %(echo %{version} | cut -d. -f1,2)
+%define major           4
+%define api             3.1
 %define libnameudev     %mklibname wxgtku %{api} -d
 
 %define apind		%(echo %{api} |tr -d .)
